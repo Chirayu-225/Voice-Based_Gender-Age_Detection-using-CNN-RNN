@@ -297,7 +297,7 @@ with st.expander("ℹ️ About the Model & Workflow", expanded=False):
     * **Age Classes:** `{list(age_encoder.classes_)}`
     
     **Workflow:**
-    1.  **`t1.py` (Preprocess):** Loops through all {len(labels_df)} audio files. For each file, it converts from MP3, pads/truncates to {MAX_LEN_SECONDS}s, normalizes, and extracts MFCCs. Saves each as a separate `.npy` file in `{FEATURES_DIR}/` and creates `final_labels.csv`.
+    1.  **`t1.py` (Preprocess):** Loops through all 72,000+ audio files. For each file, it converts from MP3, pads/truncates to {MAX_LEN_SECONDS}s, normalizes, and extracts MFCCs. Saves each as a separate `.npy` file in `processed_data/` and creates `final_labels.csv`.
     2.  **`training.py` (Train):** Loads `final_labels.csv`. Uses a `DataGenerator` to feed batches of `.npy` files to the GPU for training, saving memory. Saves the `best_voice_model.h5`.
     3.  **`Main.py` (App):** Loads `best_voice_model.h5`. When you upload or record, it performs the *exact same* preprocessing steps from `t1.py` on your single file to get a prediction.
     """)
