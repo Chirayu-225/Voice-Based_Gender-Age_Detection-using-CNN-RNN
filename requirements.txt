@@ -1,5 +1,8 @@
 streamlit
-pandas
 numpy
-yfinance
+tensorflow
+librosa
+pydub
+SpeechRecognition
 scikit-learn
+pandas
